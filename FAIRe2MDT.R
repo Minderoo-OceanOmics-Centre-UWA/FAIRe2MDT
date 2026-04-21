@@ -1,19 +1,15 @@
 ### FAIRe2MDT.R
 # Description: This script converts metabarcoding data in the FAIRe format for submission to GBIF via the Metabarcoding Data Toolkit (MDT) (https://www.gbif.org/metabarcoding).
-# Script version: 1.3.0
-# Last updated: 2025-07-16
+# Script version: 1.2.0
+# Last updated: 2026-04-13
 # SOP Doc Number : OcOm_SOP_B227 (In OcOm_SOP_Q039-1 Document Register v1.1.0)
 #
 #
 # ----------------------------------------------------------
 # Script Version History (independent of checklist versions)
 # ----------------------------------------------------------
-# v1.1.1 - OcOm - 2025-11-6
-# * Some minor changes to ensure that OceanOmics-generated FAIRe data fits
-# i.e., renames project to the OcOm ID (RS19 becomes OcOm_1901)
-# also removes some unnecessary filtering - as OcOm makes one Excel per assay, we don't need to remove ASVs/samples that are not included. they are all included.
 #
-# v1.3.0 - 2026-04-13
+# v1.2.0 - 2026-04-13
 # * Added automatic batch processing for all files matching:
 # * Skip files with duplicate OTU rows
 # * Continue processing remaining files
@@ -21,6 +17,11 @@
 # * Added duplicate ASV detection with process stop
 # * Added safe taxa column removal
 # * Added dynamic output filename generation
+#
+# v1.1.1 - OcOm - 2025-11-6
+# * Some minor changes to ensure that OceanOmics-generated FAIRe data fits
+# i.e., renames project to the OcOm ID (RS19 becomes OcOm_1901)
+# also removes some unnecessary filtering - as OcOm makes one Excel per assay, we don't need to remove ASVs/samples that are not included. they are all included.
 #
 # v1.1.0 - 2025-07-16
 # * Removed the assay_name column from the sample metadata sheet, as it was duplicated in both the sample and study sheets. While the assay_name field is necessary in the FAIRe format to support multiple assays within a single dataset, the MDT format assumes each dataset corresponds to a single assay and therefore does not require this field in the sample sheet.
